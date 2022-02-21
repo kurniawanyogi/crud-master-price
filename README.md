@@ -7,3 +7,5 @@ cara setup :
 3. jalankan service 
 
 ![redis.png](https://github.com/kurniawanyogi/crud-master-price/blob/master/redis.jpg)
+
+![db.png] (https://github.com/kurniawanyogi/crud-master-price/blob/master/db.jpg)
