@@ -9,3 +9,5 @@ cara setup :
 ![redis.png](https://github.com/kurniawanyogi/crud-master-price/blob/master/redis.jpg)
 
 ![db.png](https://github.com/kurniawanyogi/crud-master-price/blob/master/db.jpg)
+
+![api.mp4](https://github.com/kurniawanyogi/crud-master-price/blob/master/api.mp4)
