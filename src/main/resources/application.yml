@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /antaraja
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/antaraja?createDatabaseIfNotExist=true
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        strategy: org.hibernate.cfg.EJB3NamingStrategy
+    show-sql: true
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  liquibase:
+   change-log: classpath:/database/changelog/changelog.xml

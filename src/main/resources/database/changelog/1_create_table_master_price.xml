@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+              http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1_CREATE_TABLE_MASTER_PRICE" author="YOGI">
+        <createTable tableName="MASTER_PRICE">
+            <column name="ID" type="int(11)" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ORIGIN_CODE" type="VARCHAR(20)"/>
+            <column name="DESTINATION_CODE" type="VARCHAR(50)"/>
+            <column name="PRICE" type="DOUBLE(19,2)"/>
+            <column name="PRODUCT" type="VARCHAR(150)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
