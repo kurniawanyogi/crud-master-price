@@ -8,4 +8,4 @@ cara setup :
 
 ![redis.png](https://github.com/kurniawanyogi/crud-master-price/blob/master/redis.jpg)
 
-![db.png] (https://github.com/kurniawanyogi/crud-master-price/blob/master/db.jpg)
+![db.png](https://github.com/kurniawanyogi/crud-master-price/blob/master/db.jpg)
