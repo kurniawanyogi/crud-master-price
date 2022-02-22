@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <form method="POST" th:object="${priceRequest}" th:action="@{/price/add-price}">
+        <table>
+            <tr>
+                <td>
+                    Origin Code :
+                </td>
+                <td>
+                    <input id="originCode" type="text" th:field="*{originCode}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Destination Code :
+                </td>
+                <td>
+                    <input id="destinationCode" type="text" th:field="*{destinationCode}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Price :
+                </td>
+                <td>
+                    <input id="price" type="number" th:field="*{price}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Product :
+                </td>
+                <td>
+                    <input id="product" type="text" th:field="*{product}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

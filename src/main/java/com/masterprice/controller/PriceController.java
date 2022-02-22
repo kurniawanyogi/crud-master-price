@@ -8,11 +8,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
 @RequestMapping("/price")
 public class PriceController {
@@ -28,5 +30,18 @@ public class PriceController {
     public ResponseEntity<BaseResponse> getPriceDetail(@PathVariable(name = "id") Integer id) {
         Price response = priceService.getOneByProductId(id);
         return ResponseEntity.ok(new BaseResponse(HttpStatus.OK.toString(), "Price Detail", response));
+    }
+
+    @PostMapping(path = {"/add-price"})
+    public String addPrice(Model model, PriceRequest request) {
+        model.addAttribute("priceRequest", new PriceRequest());
+        priceService.savePrice(request);
+        return "add-price";
+    }
+
+    @GetMapping(path = {"/home"})
+    public String index(Model model) {
+        model.addAttribute("priceRequest", new PriceRequest());
+        return "add-price";
     }
 }
