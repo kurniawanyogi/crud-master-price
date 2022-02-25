@@ -3,6 +3,7 @@ package com.masterprice.repository;
 import com.masterprice.entity.Price;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -22,7 +23,7 @@ public class PriceRedisRepoImpl implements PriceRedisRepo {
     }
 
     @Override
-    @CachePut(value = REDIS_CACHE_VALUE, key = "#id")
+    @Cacheable(value = REDIS_CACHE_VALUE, key = "#id")
     public Price getPriceById(Integer id) {
         Optional<Price> price = priceRepository.findById(id);
 
