@@ -24,7 +24,7 @@ public class PriceServiceImpl implements PriceService {
         price.setProduct(request.getProduct());
         Price saved = priceRepository.save(price);
         priceRedisRepo.savePrice(saved);
-        return saved;
+        return price;
     }
 
     @Override

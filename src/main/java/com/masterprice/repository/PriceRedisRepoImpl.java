@@ -4,8 +4,10 @@ import com.masterprice.entity.Price;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.HashOperations;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Optional;
 
 @Service
@@ -15,11 +17,13 @@ public class PriceRedisRepoImpl implements PriceRedisRepo {
 
     private final PriceRepository priceRepository;
 
+    @Resource(name = "redisTemplate")
+    private HashOperations<String, Integer, Price> hashOperations;
+
 
     @Override
-    @CachePut(value = REDIS_CACHE_VALUE, key = "#price.id")
     public void savePrice(Price price) {
-        priceRepository.save(price);
+        hashOperations.putIfAbsent(REDIS_CACHE_VALUE, price.getId(), price);
     }
 
     @Override
